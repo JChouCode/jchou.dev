@@ -16,6 +16,7 @@ const config: Config = {
     fontFamily: {
       sans: ['Inter Display', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      mono: ['JetBrains Mono']
     },
     extend: {
       colors: {
@@ -33,6 +34,8 @@ const config: Config = {
         'dark-blue': '#1565C0',
         'light-purple': '#FCE4FF',
         'dark-purple': '#4527A0',
+        'light-orange': '#FFF3E0',
+        'dark-orange': '#EF6C00'
       },
       backgroundColor: {
         'gray': '#ECEFF3',

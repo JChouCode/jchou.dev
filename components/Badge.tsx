@@ -4,6 +4,7 @@ export enum Color {
     PURPLE,
     BLUE,
     PINK,
+    ORANGE,
 }
 
 let colorBgLight = new Map([
@@ -12,6 +13,7 @@ let colorBgLight = new Map([
     [Color.PURPLE, 'bg-light-purple'],
     [Color.BLUE, 'bg-light-blue'],
     [Color.PINK, 'bg-light-pink'],
+    [Color.ORANGE, 'bg-light-orange']
 ]);
 
 let colorBgDark = new Map([
@@ -20,6 +22,7 @@ let colorBgDark = new Map([
     [Color.PURPLE, 'bg-dark-purple'],
     [Color.BLUE, 'bg-dark-blue'],
     [Color.PINK, 'bg-dark-pink'],
+    [Color.ORANGE, 'bg-dark-orange']
 ]);
 
 let colorText = new Map([
@@ -28,6 +31,7 @@ let colorText = new Map([
     [Color.PURPLE, 'text-dark-purple'],
     [Color.BLUE, 'text-dark-blue'],
     [Color.PINK, 'text-dark-pink'],
+    [Color.ORANGE, 'text-dark-orange']
 ]);
 
 type BadgeProps = {

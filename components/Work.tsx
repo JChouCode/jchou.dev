@@ -27,11 +27,11 @@ export default function Work() {
             </Experience>
             <Experience photoPath="/iotex.png" company="IoTeX" title="Software Engineer Intern">
                 <Badge text="Fullstack" color={Color.PINK}></Badge>
-                <Badge text="Crypto" color={Color.BLUE}></Badge>
+                <Badge text="Crypto" color={Color.ORANGE}></Badge>
             </Experience>
             <Experience photoPath="/nasared.png" company="NASA" title="Planetary Sciences Intern">
-                <Badge text="Research" color={Color.RED}></Badge>
-                <Badge text="Data" color={Color.PURPLE}></Badge>
+                <Badge text="Research" color={Color.GREEN}></Badge>
+                <Badge text="Data" color={Color.RED}></Badge>
             </Experience>
         </div>)
 }
