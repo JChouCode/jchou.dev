@@ -15,12 +15,15 @@ export default function LeetCard() {
     const solved = useMotionValue(0);
     const solvedRounded = useTransform(solved, Math.round);
 
-    useEffect(async function () {
-        try {
+    useEffect(() => {
+        async function fetchData() {
             const response = await fetch('https://leetcode-stats-api.herokuapp.com/jchoubankai');
             const data = await response.json();
             animate(ranking, data.ranking, { duration: 1 });
             animate(solved, data.totalSolved, { duration: 1 });
+        }
+        try {
+            fetchData();
         } catch (error) {
             console.log('error fetching leetcode data');
         }
