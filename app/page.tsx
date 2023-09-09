@@ -7,7 +7,7 @@ import MusicCard from '@/components/MusicCard'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-12 bg-gray">
+    <main className="flex w-fit h-fit flex-col items-center justify-between p-12 bg-gray">
       <Layout left={<MainPane />}>
         <LeetCard></LeetCard>
         <PhotosCard />
