@@ -35,8 +35,8 @@ let colorText = new Map([
 ]);
 
 type BadgeProps = {
-    text: String
-    dot: Boolean
+    text: string
+    dot: boolean
     color: Color
 }
 

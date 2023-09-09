@@ -3,13 +3,17 @@ import { Badge } from './Badge'
 import { ReactNode } from 'react'
 
 type ExperienceProps = {
-    photoPath: String
-    company: String
-    title: String
+    photoPath: string
+    company: string
+    title: string
     children: ReactNode
 }
 
 export default function Experience(props: ExperienceProps) {
+    if (props.children == null || props.children == undefined) {
+        return (<div></div>)
+    }
+
     return (<div className="mt-3 flex justify-between items-center p-2 px-4 bg-white rounded-lg shadow-sm border-light-gray border-[1px] w-full h-[78px] mx-auto">
         <div className="flex">
             <div className="flex mr-3 items-center justify-center h-[50px] w-[50px] border-light-gray border-2 rounded-full shadow-sm">

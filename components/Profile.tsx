@@ -13,7 +13,7 @@ export default function Profile() {
             <div className='flex flex-col'>
                 <h1 className='font-semibold text-[37px] mb-1'>Jeffrey Chou</h1>
                 <div className='font-light text-secondary tracking-wide w-fit text-md leading-[25px]'>
-                    <p>Software engineer from Bay Area, CA.<br></br> Previously at <a className="text-black underline-offset-4 underline" href="https://www.apollographql.com/">Apollo GraphQL</a>.</p>
+                    <p>Software engineer from Bay Area, CA.<br></br> Previously at <a className="hover:font-regular text-black underline-offset-4 underline" href="https://www.apollographql.com/">Apollo GraphQL</a>.</p>
                 </div>
                 <div className='flex mt-5 gap-1'>
                     <HireButton></HireButton>

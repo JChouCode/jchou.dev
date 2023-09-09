@@ -33,7 +33,7 @@ export default function MusicCard() {
 
     const audio = useMemo(() => { return new Audio(audioPath); }, [audioIndex])
 
-    useEffect(() => { audio.play() }, [audioIndex]);
+    useEffect(() => { audio.play(); }, [audioIndex]);
 
     return (<Card logoPath="/apple-music-logo.png" logoUrl="https://spotify.com" disableShadow={true}>
         <div className="relative p-[28px] h-full overflow-hidden rounded-2xl">
