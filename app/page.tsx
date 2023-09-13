@@ -4,6 +4,7 @@ import LeetCard from '@/components/LeetCard'
 import PhotosCard from '@/components/PhotosCard'
 import InstagramCard from '@/components/InstagramCard'
 import MusicCard from '@/components/MusicCard'
+import LinkedInCard from '@/components/LinkedInCard'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <PhotosCard />
         <InstagramCard />
         <MusicCard></MusicCard>
+        <LinkedInCard></LinkedInCard>
         {/* <Card></Card>
         <Card></Card> */}
       </Layout>

@@ -5,8 +5,6 @@ import { useState } from "react";
 import Card from "./Card";
 import { motion, AnimatePresence } from "framer-motion";
 
-const images = ['/cloudy1.jpeg', '/cloudy2.jpeg']
-
 const videos = ['/cloudy1.MOV', '/cloudy2.MOV', '/cloudy3.MOV']
 
 export default function PhotosCard() {

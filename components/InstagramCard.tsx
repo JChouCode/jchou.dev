@@ -33,7 +33,7 @@ export default function InstagramCard() {
 
     return (
         <div onMouseOver={() => setHoverY(0)} onMouseOut={() => setHoverY(100)}>
-            <Card logoPath="/instagram.png" logoUrl='https://www.instagram.com/jchouder/'>
+            <Card logoPath="/instacrop.png" logoUrl='https://www.instagram.com/jchouder/'>
                 <AnimatePresence initial={false}>
                     <div className="relative w-full h-full overflow-hidden">
                         <div className="relative overflow-hidden w-full h-full rounded-xl bg-white">

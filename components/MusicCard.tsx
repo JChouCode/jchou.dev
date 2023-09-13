@@ -47,11 +47,12 @@ export default function MusicCard() {
         dittoAudio.current = new Audio('/ditto.mp3');
     }, []);
 
-    useEffect(() => { audio.current.play(); }, [audioIndex]);
+    useEffect(() => { if (playing) { audio.current.play(); } }, [audioIndex]);
 
-    return (<Card logoPath="/apple-music-logo.png" logoUrl="https://spotify.com" disableShadow={true}>
+    return (<Card logoPath="/apple-music-logo.png" logoUrl="https://open.spotify.com/user/1259911919?si=d9a09e90f02f4611" disableShadow={true}>
         <div className="relative p-[28px] h-full overflow-hidden rounded-2xl">
-            <motion.div initial={false} animate={{ scale: playing ? 15 : 1 }} transition={{ type: 'linear', duration: 0.2 }} className=" z-10 absolute rounded-xl right-[28px] h-[50px] w-[50px] bg-gradient-to-b from-[#f95d73] to-[#fa263d]">
+            <motion.div initial={false} animate={{ scale: playing ? 15 : 1 }} transition={{ type: 'linear', duration: 0.2 }}
+                className=" z-10 absolute rounded-xl right-[28px] h-[50px] w-[50px] bg-gradient-to-b from-[#f95d73] to-[#fa263d]">
 
             </motion.div>
             <div className=" flex flex-col justify-start">
@@ -63,7 +64,7 @@ export default function MusicCard() {
                 <div className={`z-[200] ml-1 text-[14px] leading-7 font-regular ${playing ? 'text-white' : 'text-secondary'}`}>{artist + " - " + album}</div>
                 <motion.div animate={{ stroke: playing ? 'white' : 'black', backgroundColor: playing ? '#00000040' : 'white' }} className="z-[200] shadow-sm mt-5 h-[48px] w-full flex justify-between rounded-xl py-[10px] px-[16px] border-black border-2 border-opacity-10">
                     <button>
-                        <a href="https://spotify.com">
+                        <a href="https://open.spotify.com/user/1259911919?si=d9a09e90f02f4611">
                             <motion.svg animate={{ stroke: playing ? 'white' : '#00000090' }} className=' stroke-[1.6px] stroke-[#00000090]' width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M2 11h14M2 17h11M2 5h18" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 18.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0v-7.9a.6.6 0 01.6-.6H22" stroke-linecap="round"></path></motion.svg>
                         </a>
                     </button>

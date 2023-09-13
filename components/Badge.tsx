@@ -45,7 +45,7 @@ export function Badge(props: BadgeProps) {
         <div className={`flex justify-center items-center h-[25px] w-fit px-2 rounded-[10px] ${colorBgLight.get(props.color)}`}>
             <div className='flex justify-between items-center h-fit content-center'>
                 {props.dot && (
-                    <div className={`h-[6px] w-[6px] mr-1 ${colorBgDark.get(props.color)} rounded-full`}>
+                    <div className={`h-[5px] w-[5px] mr-[4px] ${colorBgDark.get(props.color)} rounded-full`}>
                     </div>
                 )
                 }
