@@ -23,7 +23,7 @@ export default function LinkedInCard() {
                         </div>
                         <div className="flex flex-col w-fit h-fit">
                             <div className="text-[15px] leading-4 font-semibold">Jeffrey Chou</div>
-                            <div className={`text-[14px] mt-1 leading-4 font-regular ${hover ? "text-white text-opacity-80" : "text-secondary"}`}>Cornell '22 | Comp Sci</div>
+                            <div className={`text-[14px] mt-1 leading-4 font-regular ${hover ? "text-white text-opacity-80" : "text-secondary"}`}>Cornell &apos;22 | Comp Sci</div>
                         </div>
                     </div>
                 </div>
