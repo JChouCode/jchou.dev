@@ -5,7 +5,7 @@ import { useState } from "react";
 import Card from "./Card";
 import { motion, AnimatePresence } from "framer-motion";
 
-const videos = ['/cloudy1.MOV', '/cloudy2.MOV', '/cloudy4.MOV']
+const videos = ['/cloudy1.MOV', '/cloudy2.MOV', '/cloudy4.mov']
 const descriptions = ['My pet bird Cloudy is a true asian 🍚', 'My pet bird Cloudy loves watching me code 👨‍💻', 'My pet bird Cloudy enjoys 🍌 too!']
 
 export default function PhotosCard() {
