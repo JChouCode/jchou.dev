@@ -2,9 +2,44 @@
 
 import Card from "./Card";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import localFont from 'next/font/local'
 
+const jetBrainsMono = localFont({
+    src: [
+        {
+            path: '../public/fonts/JetBrainsMono-Light.woff2',
+            weight: '300',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/JetBrainsMono-Medium.woff2',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/JetBrainsMono-SemiBold.woff2',
+            weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/JetBrainsMono-Bold.woff2',
+            weight: '700',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/JetBrainsMono-ExtraBold.woff2',
+            weight: '800',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/JetBrainsMono-Regular.woff2',
+            weight: '400',
+            style: 'normal',
+        },
+    ],
+})
 
 export default function LeetCard() {
 
@@ -29,7 +64,7 @@ export default function LeetCard() {
     }, []);
 
     return (<Card>
-        <div className="font-mono w-full h-full bg-[#242424] rounded-2xl p-7 text-white">
+        <div className={jetBrainsMono.className + ` w-full h-full bg-[#242424] rounded-2xl p-7 text-white`}>
             <div className="flex justify-between">
                 <h2 className={`font-semibold text-[23px]`}>Leetcode<br></br>Stats</h2>
                 <a href="https://leetcode.com/jchoubankai/" className="h-fit">
@@ -46,11 +81,11 @@ export default function LeetCard() {
             <div className="mt-4 flex justify-between">
                 <div className="flex flex-col">
                     <div className="font-light text-sm">Rank</div>
-                    <motion.div initial={false} className="font-bold text-[36px] text-[#F9A118]">{rankingRounded}</motion.div>
+                    <motion.div initial={false} className="font-extrabold text-[36px] text-[#F9A118]">{rankingRounded}</motion.div>
                 </div>
                 <div className="flex flex-col">
                     <div className="font-light text-sm">Solved</div>
-                    <motion.div initial={false} className="font-bold text-[36px] text-[#3AB8A3]">{solvedRounded}</motion.div>
+                    <motion.div initial={false} className="font-extrabold text-[36px] text-[#3AB8A3]">{solvedRounded}</motion.div>
                 </div>
             </div>
             <div className="flex flex-col mt-3 gap-2 w-full">

@@ -7,7 +7,7 @@ export default function Profile() {
     return (<div className="w-full mb-6">
         <div className='flex justify-between mb-6'>
             <Badge text="CORNELL '22" dot={false} color={Color.RED}></Badge>
-            <Badge text="AVAILABLE FOR WORK" dot={true} color={Color.GREEN}></Badge>
+            <Badge text="AVAILABLE FOR WORK :)" dot={false} color={Color.GREEN}></Badge>
         </div>
         <div className='flex flex-row w-full h-min justify-between items-center'>
             <div className='flex flex-col'>

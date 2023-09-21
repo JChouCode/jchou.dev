@@ -13,11 +13,6 @@ const config: Config = {
       lg: '976px',
       xl: '1440px',
     },
-    fontFamily: {
-      sans: ['Inter Display', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-      mono: ['JetBrains Mono']
-    },
     extend: {
       colors: {
         'bg-gray': '#ECEFF3',
