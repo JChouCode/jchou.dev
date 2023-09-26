@@ -37,7 +37,7 @@ export default function LinkedInCard() {
                     className={`z-[300] mt-7 flex justify-center items-center w-full h-[53px] border-black border-2 border-opacity-[15%] rounded-2xl`}
                     onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
                     <div className="z-[100] flex gap-2 items-center">
-                        <div className="font-medium text-[17px]">Slide into my DMs</div>
+                        <div className="font-medium text-[17px]">Come say hi</div>
                         <svg className={`${hover ? "stroke-white" : "stroke-black"} stroke-2`} width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.5 14.5s-1.5 2-4.5 2-4.5-2-4.5-2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.5 9a.5.5 0 110-1 .5.5 0 010 1zM8.5 9a.5.5 0 110-1 .5.5 0 010 1z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                     </div>
                 </motion.a>
