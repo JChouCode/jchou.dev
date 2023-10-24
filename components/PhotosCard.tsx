@@ -14,7 +14,7 @@ export default function PhotosCard() {
     const [hover, setHover] = useState(false);
 
     return (<div>
-        <Card logoPath="/apple-photos.png" logoUrl='https://www.instagram.com/jchouder/'>
+        <Card logoPath="/apple-photos.png" logoUrl='https://www.icloud.com/sharedalbum/#B0sJtdOXmq6U0d3'>
             <AnimatePresence initial={false}>
                 <div onMouseOver={() => { setHover(true); }} onMouseOut={() => { setHover(false); }} className="relative w-full h-full overflow-hidden">
                     <div className="relative overflow-hidden w-full h-full rounded-xl bg-white">

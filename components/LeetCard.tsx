@@ -2,8 +2,8 @@
 
 import Card from "./Card";
 import Image from "next/image";
-import { useEffect } from "react";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import localFont from 'next/font/local'
 
 const jetBrainsMono = localFont({
@@ -49,6 +49,8 @@ export default function LeetCard() {
     const solved = useMotionValue(0);
     const solvedRounded = useTransform(solved, Math.round);
 
+    const [info, setInfo] = useState("");
+
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('https://leetcode-stats-api.herokuapp.com/jchoubankai', { next: { revalidate: 3600 } });
@@ -64,7 +66,7 @@ export default function LeetCard() {
     }, []);
 
     return (<Card>
-        <div className={jetBrainsMono.className + ` w-full h-full bg-[#242424] rounded-2xl p-7 text-white`}>
+        <div className={jetBrainsMono.className + ` relative flex flex-col w-full h-full bg-[#242424] rounded-2xl p-7 text-white`}>
             <div className="flex justify-between">
                 <h2 className={`font-semibold text-[23px]`}>Leetcode<br></br>Stats</h2>
                 <a href="https://leetcode.com/jchoubankai/" className="h-fit">
@@ -88,33 +90,46 @@ export default function LeetCard() {
                     <motion.div initial={false} className="font-extrabold text-[36px] text-[#3AB8A3]">{solvedRounded}</motion.div>
                 </div>
             </div>
-            <div className="flex flex-col mt-3 gap-2 w-full">
-                <div className="font-light text-sm">Badges</div>
-                <div className="w-full overflow-x-auto">
-                    <div className="w-[365px] h-[55px] pt-[1px] pb-3 overflow-hidden">
-                        <motion.div animate={{ x: '-365px' }} transition={{ type: 'spring', stiffness: 40, duration: 7, delay: 0.8 }} className="flex w-[726px] h-full left-0">
-                            <div className="flex w-fit h-full items-center gap-2 mr-2">
-                                <Image src="/lc-top-100-liked-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-75-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-top-100-interview-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-programming-skills-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-may-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-june-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-august-badge.png" height={45} width={45} alt="icon"></Image>
-                            </div>
-                            <div className="flex w-fit h-full items-center gap-2">
-                                <Image src="/lc-top-100-liked-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-75-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-top-100-interview-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-programming-skills-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-may-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-june-badge.png" height={45} width={45} alt="icon"></Image>
-                                <Image src="/lc-august-badge.png" height={45} width={45} alt="icon"></Image>
-                            </div>
-                        </motion.div>
+            <div className="relative flex flex-col mt-3 gap-2 w-full h-full">
+                <div className="flex justify-between items-center h-[25px]">
+                    <div className="font-light text-sm">Badges</div>
+                    <AnimatePresence>
+                        {info && <motion.div className=" font-normal p-1 px-2 rounded-md text-[11px] bg-black bg-opacity-30 text-white">{info}</motion.div>}
+                    </AnimatePresence>
+                </div>
+                <div className="relative">
+                    <div className="relative w-full h-fit pb-2 overflow-x-scroll">
+                        <div className="relative w-[470px] h-fit overflow-x-hidden">
+                            <motion.div className="flex w-[930px] h-[50px]" animate={{ x: '-470px' }} transition={{ type: 'spring', stiffness: 40, duration: 7, delay: 0.8 }}>
+                                <div className="relative flex w-fit h-full items-center gap-2 mr-2">
+                                    <Image src="/lc-top-100-liked-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-75-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-top-100-interview-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-programming-skills-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-premium-100-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-may-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-june-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-august-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-september-badge.png" height={45} width={45} alt="icon"></Image>
+                                </div>
+                                <div className="relative flex w-fit h-full items-center gap-2">
+                                    <Image src="/lc-top-100-liked-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Top 100 Liked"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-75-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("LeetCode 75"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-top-100-interview-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Top Interview 150"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-programming-skills-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Programming Skills"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-premium-100-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Premium Algo 100"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-may-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("May 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-june-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("June 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-august-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Aug 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-september-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Sep 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                </div>
+                            </motion.div>
+                        </div>
+
                     </div>
 
                 </div>
+
             </div>
         </div>
     </Card >)
