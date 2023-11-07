@@ -8,13 +8,13 @@ export default function HireButton() {
             boxShadow: '0 0 0 3px #00000020',
             transition: { type: 'linear', duration: 2 },
         }}
-        whileTap={{ scale: 0.9 }} href="https://www.linkedin.com/in/jeffreychoucu/" className="outline outline-1 outline-[#00000030] font-[sans-serif] shadow-button flex justify-center w-[92px] h-[36px] bg-black rounded-md text-white">
-        <div className="flex justify-between items-center w-[75%]">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" width='14px' height='14px' viewBox="0 0 24 24"><path d="M11 11V7H13V11H17V13H13V17H11V13H7V11H11ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" fill="rgba(255,255,255,1)"></path></svg> */}
-            <div className="flex justify-center items-center h-[12px] w-[12px] rounded-full border-white border-[1px]">
-                <svg xmlns="http://www.w3.org/2000/svg" height='10px' width='10px' viewBox="0 0 24 24"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" fill="rgba(255,255,255,1)"></path></svg>
+        whileTap={{ scale: 0.9 }} href="https://www.linkedin.com/in/jeffreychoucu/"
+        className="flex items-center outline outline-1 outline-[#00000030] font-[sans-serif] shadow-button p-2 h-[24px] w-[67px] lg:w-[83px] lg:h-[36px] bg-black rounded-md text-white">
+        <div className="flex w-full justify-between items-center">
+            <div className="rounded-full border-white border-[1px]">
+                <svg className="w-[8px] lg:w-[10px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z" fill="rgba(255,255,255,1)"></path></svg>
             </div>
-            <div className='font-regular text-sm'>Hire Me</div>
+            <div className='font-medium text-xxs lg:text-sm'>Hire Me</div>
         </div>
     </motion.a>)
 }

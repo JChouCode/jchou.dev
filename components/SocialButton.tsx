@@ -13,7 +13,8 @@ export default function SocialButton(props: SocialProps) {
             scale: 1.1,
             transition: { type: 'spring', duration: 0.3 },
         }}
-            whileTap={{ scale: 0.9 }} className="flex items-center justify-center h-[40px] w-[40px] border-light-gray border-[2px] shadow-sm rounded-lg ml-2 bg-white">
+            whileTap={{ scale: 0.9 }}
+            className="flex items-center justify-center w-[27px] h-[27px] lg:h-[40px] lg:w-[40px] border-light-gray border-[2px] shadow-sm rounded-lg ml-2 bg-white">
             {props.children}
         </motion.div>
     )

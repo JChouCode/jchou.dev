@@ -14,6 +14,9 @@ const config: Config = {
       xl: '1440px',
     },
     extend: {
+      fontSize: {
+        xxs: '10px'
+      },
       colors: {
         'bg-gray': '#ECEFF3',
         'pane-gray': '#F6F8FA',

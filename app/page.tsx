@@ -49,15 +49,13 @@ const interDisplay = localFont({
 
 export default function Home() {
   return (
-    <main className={interDisplay.className + ` flex min-w-full min-h-full w-fit h-fit flex-col items-center justify-center pb-12 pt-8 bg-gray`}>
+    <main className={interDisplay.className + ` flex min-w-full min-h-full w-fit h-fit flex-col items-center justify-center pb-14 pt-8 bg-gray`}>
       <Layout left={<MainPane />}>
         <LeetCard></LeetCard>
         <PhotosCard />
         <InstagramCard />
         <MusicCard></MusicCard>
         <LinkedInCard></LinkedInCard>
-        {/* <Card></Card>
-        <Card></Card> */}
       </Layout>
     </main>
   )
