@@ -99,14 +99,16 @@ export default function LeetCard() {
                 </div>
                 <div className="relative">
                     <div className="relative w-full h-fit pb-2 overflow-x-scroll">
-                        <div className="relative w-[470px] h-fit overflow-x-hidden">
-                            <motion.div className="flex w-[930px] h-[50px]" animate={{ x: '-470px' }} transition={{ type: 'spring', stiffness: 40, duration: 7, delay: 0.8 }}>
+                        <div className="relative w-[575px] h-fit overflow-x-hidden">
+                            <motion.div className="flex w-[1200px] h-[50px]" animate={{ x: '-584px' }} transition={{ type: 'spring', stiffness: 40, duration: 7, delay: 0.8 }}>
                                 <div className="relative flex w-fit h-full items-center gap-2 mr-2">
                                     <Image src="/lc-top-100-liked-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-75-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-top-100-interview-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-programming-skills-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-premium-100-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-dp-badge.png" height={45} width={45} alt="icon"></Image>
+                                    <Image src="/lc-graph-theory-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-may-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-june-badge.png" height={45} width={45} alt="icon"></Image>
                                     <Image src="/lc-august-badge.png" height={45} width={45} alt="icon"></Image>
@@ -118,6 +120,8 @@ export default function LeetCard() {
                                     <Image src="/lc-top-100-interview-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Top Interview 150"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
                                     <Image src="/lc-programming-skills-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Programming Skills"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
                                     <Image src="/lc-premium-100-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Premium Algo 100"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-dp-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Dynamic Programming"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
+                                    <Image src="/lc-graph-theory-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Graph Theory"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
                                     <Image src="/lc-may-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("May 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
                                     <Image src="/lc-june-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("June 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
                                     <Image src="/lc-august-badge.png" height={45} width={45} onMouseEnter={() => { setInfo("Aug 2023 Badge"); }} onMouseLeave={() => { setInfo(""); }} alt="icon"></Image>
