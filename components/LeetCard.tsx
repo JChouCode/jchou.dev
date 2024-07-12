@@ -144,8 +144,8 @@ export default function LeetCard() {
                         <div className="relative w-full h-fit pb-2 overflow-x-scroll">
                             <div className="relative w-[730px] h-fit overflow-x-hidden">
                                 <motion.div
-                                    className="flex w-[1400px] h-[50px]"
-                                    animate={{ x: "-705px" }}
+                                    className="flex w-[1420px] h-[50px]"
+                                    animate={{ x: "-712px" }}
                                     transition={{
                                         type: "spring",
                                         stiffness: 40,
