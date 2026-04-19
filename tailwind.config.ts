@@ -32,6 +32,8 @@ const config: Config = {
         'dark-blue': '#1565C0',
         'light-purple': '#FCE4FF',
         'dark-purple': '#4527A0',
+        'light-teal': '#FFEAA7',
+        'dark-teal': '#C98A00',
         'light-orange': '#FFF3E0',
         'dark-orange': '#EF6C00'
       },

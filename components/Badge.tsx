@@ -4,6 +4,7 @@ export enum Color {
     PURPLE,
     BLUE,
     PINK,
+    TEAL,
     ORANGE,
 }
 
@@ -13,6 +14,7 @@ let colorBgLight = new Map([
     [Color.PURPLE, 'bg-light-purple'],
     [Color.BLUE, 'bg-light-blue'],
     [Color.PINK, 'bg-light-pink'],
+    [Color.TEAL, 'bg-light-teal'],
     [Color.ORANGE, 'bg-light-orange']
 ]);
 
@@ -22,6 +24,7 @@ let colorBgDark = new Map([
     [Color.PURPLE, 'bg-dark-purple'],
     [Color.BLUE, 'bg-dark-blue'],
     [Color.PINK, 'bg-dark-pink'],
+    [Color.TEAL, 'bg-dark-teal'],
     [Color.ORANGE, 'bg-dark-orange']
 ]);
 
@@ -31,6 +34,7 @@ let colorText = new Map([
     [Color.PURPLE, 'text-dark-purple'],
     [Color.BLUE, 'text-dark-blue'],
     [Color.PINK, 'text-dark-pink'],
+    [Color.TEAL, 'text-dark-teal'],
     [Color.ORANGE, 'text-dark-orange']
 ]);
 

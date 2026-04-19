@@ -12,6 +12,8 @@ import {
 } from "framer-motion";
 import localFont from "next/font/local";
 
+const LEETCODE_CACHE_KEY = "leetcode-stats-cache";
+
 const jetBrainsMono = localFont({
     src: [
         {
@@ -57,21 +59,71 @@ export default function LeetCard() {
     const [info, setInfo] = useState("");
 
     useEffect(() => {
+        let isMounted = true;
+
+        function animateStats(nextRanking: number, nextSolved: number) {
+            animate(ranking, nextRanking, { duration: 1 });
+            animate(solved, nextSolved, { duration: 1 });
+        }
+
+        const cachedStats =
+            typeof window !== "undefined"
+                ? window.localStorage.getItem(LEETCODE_CACHE_KEY)
+                : null;
+
+        if (cachedStats) {
+            try {
+                const parsedCache = JSON.parse(cachedStats);
+                if (
+                    typeof parsedCache.ranking === "number" &&
+                    typeof parsedCache.totalSolved === "number"
+                ) {
+                    animateStats(parsedCache.ranking, parsedCache.totalSolved);
+                }
+            } catch (error) {
+                console.error("error reading cached leetcode data", error);
+            }
+        }
+
         async function fetchData() {
-            const response = await fetch(
-                "https://leetcode-stats-api.herokuapp.com/jchoubankai",
-                { next: { revalidate: 3600 } }
-            );
-            const data = await response.json();
-            animate(ranking, data.ranking, { duration: 1 });
-            animate(solved, data.totalSolved, { duration: 1 });
+            try {
+                const response = await fetch("/api/leetcode", {
+                    cache: "no-store",
+                });
+
+                if (!response.ok) {
+                    throw new Error(`leetcode fetch failed: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (
+                    !isMounted ||
+                    typeof data.ranking !== "number" ||
+                    typeof data.totalSolved !== "number"
+                ) {
+                    return;
+                }
+
+                animateStats(data.ranking, data.totalSolved);
+                window.localStorage.setItem(
+                    LEETCODE_CACHE_KEY,
+                    JSON.stringify({
+                        ranking: data.ranking,
+                        totalSolved: data.totalSolved,
+                    })
+                );
+            } catch (error) {
+                console.error("error fetching leetcode data", error);
+            }
         }
-        try {
-            fetchData();
-        } catch (error) {
-            console.log("error fetching leetcode data");
-        }
-    }, []);
+
+        fetchData();
+
+        return () => {
+            isMounted = false;
+        };
+    }, [ranking, solved]);
 
     return (
         <Card>

@@ -20,6 +20,7 @@ export default function Work() {
                 title="Software Engineer"
             >
                 <Badge text="Fullstack" color={Color.PINK}></Badge>
+                <Badge text="✦ AI" color={Color.TEAL}></Badge>
             </Experience>
             <Experience
                 photoPath="/apollo.png"

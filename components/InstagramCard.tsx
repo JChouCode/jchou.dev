@@ -57,6 +57,19 @@ export default function InstagramCard() {
                             >
                                 <Image src={images[imageIndex]} width={328} height={328} alt="Instagram" placeholder="blur" />
                             </motion.div>
+                            <AnimatePresence initial={false}>
+                                {selected === Images.WAVES && (
+                                    <motion.div
+                                        key="surf-popup"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="absolute left-[28px] top-[28px] z-[150] w-fit rounded-xl bg-black bg-opacity-50 p-2 text-xs font-regular tracking-wide text-white text-opacity-90"
+                                    >
+                                        I surf sometimes...
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                             <motion.div animate={{ y: hoverY }} transition={{ type: 'spring', duration: 0.7 }} className="z-[100] flex justify-evenly items-center left-0 right-0 backdrop-blur-lg mx-auto bottom-6 absolute w-[150px] h-[48px] bg-white bg-opacity-50 rounded-full border-[#FFFFFF50] border-[3px] ">
                                 <button className="relative flex justify-center items-center h-[80%] w-fit px-1 rounded-full" onClick={() => { setSelected(Images.ME); }}>
                                     <svg className={`z-[200] ${selected == Images.ME ? 'stroke-black' : 'stroke-[#00000070]'}`} width="35px" height="35px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M3 16V8a5 5 0 015-5h8a5 5 0 015 5v8a5 5 0 01-5 5H8a5 5 0 01-5-5z" stroke-width="1.5"></path><path d="M16.5 14.5s-1.5 2-4.5 2-4.5-2-4.5-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.5 10a.5.5 0 110-1 .5.5 0 010 1zM15.5 10a.5.5 0 110-1 .5.5 0 010 1z" fill="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
