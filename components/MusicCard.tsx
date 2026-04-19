@@ -17,9 +17,9 @@ type AudioInfo = {
 
 const audioMap: Array<AudioInfo> = [
     { audioSources: ['/e85.flac', '/e85.mp3'], imgPath: '/e85_album.png', track: 'E85', album: 'OCTANE', artist: 'Don Toliver' },
+    { audioSources: ['/2nite.flac', '/2nite.mp3'], imgPath: '/2nite_album.png', track: '2Nite', album: '2Nite', artist: 'Yeat' },
     { audioSources: ['/satellite.mp3'], imgPath: '/satellite_album.jpeg', track: 'Satellite', album: 'Harry\'s House', artist: 'Harry Styles' },
     { audioSources: ['/ordinary-life.mp3'], imgPath: '/starboy_album.png', track: 'Ordinary Life', album: 'Starboy', artist: 'The Weeknd' },
-    { audioSources: ['/2nite.flac', '/2nite.mp3'], imgPath: '/2nite_album.png', track: '2Nite', album: '2Nite', artist: 'Yeat' },
 ]
 
 const resolveAudioSource = (audioSources: string[]) => {
