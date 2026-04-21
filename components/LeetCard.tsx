@@ -14,6 +14,23 @@ import localFont from "next/font/local";
 
 const LEETCODE_CACHE_KEY = "leetcode-stats-cache";
 
+const LEETCODE_BADGES = [
+    { src: "/lc-top-100-liked-badge.png", title: "Top 100 Liked" },
+    { src: "/lc-75-badge.png", title: "LeetCode 75" },
+    { src: "/lc-top-100-interview-badge.png", title: "Top Interview 150" },
+    { src: "/lc-programming-skills-badge.png", title: "Programming Skills" },
+    { src: "/lc-premium-100-badge.png", title: "Premium Algo 100" },
+    { src: "/lc-dp-badge.png", title: "Dynamic Programming" },
+    { src: "/lc-graph-theory-badge.png", title: "Graph Theory" },
+    { src: "/lc-binary-search-badge.png", title: "Binary Search" },
+    { src: "/lc-50-badge.png", title: "50 Days - 2023" },
+    { src: "/lc-100-badge.png", title: "100 Days - 2023" },
+    { src: "/lc-may-badge.png", title: "May 2023 Badge" },
+    { src: "/lc-june-badge.png", title: "June 2023 Badge" },
+    { src: "/lc-august-badge.png", title: "Aug 2023 Badge" },
+    { src: "/lc-september-badge.png", title: "Sep 2023 Badge" },
+] as const;
+
 const jetBrainsMono = localFont({
     src: [
         {
@@ -192,12 +209,12 @@ export default function LeetCard() {
                             )}
                         </AnimatePresence>
                     </div>
-                    <div className="relative">
-                        <div className="relative w-full h-fit pb-2 overflow-x-scroll">
-                            <div className="relative w-[730px] h-fit overflow-x-hidden">
+                    <div className="relative w-full overflow-x-scroll overflow-y-hidden pb-2">
+                        <div className="relative h-[50px] min-w-max">
+                            <div className="absolute inset-0 overflow-hidden">
                                 <motion.div
-                                    className="flex w-[1420px] h-[50px]"
-                                    animate={{ x: "-712px" }}
+                                    className="flex h-[50px] w-max will-change-transform"
+                                    animate={{ x: "-50%" }}
                                     transition={{
                                         type: "spring",
                                         stiffness: 40,
@@ -205,263 +222,44 @@ export default function LeetCard() {
                                         delay: 0.8,
                                     }}
                                 >
-                                    <div className="relative flex w-fit h-full items-center gap-2 mr-2">
-                                        <Image
-                                            src="/lc-top-100-liked-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-75-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-top-100-interview-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-programming-skills-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-premium-100-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-dp-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-graph-theory-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-binary-search-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-50.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-100.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-may-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-june-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-august-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-september-badge.png"
-                                            height={45}
-                                            width={45}
-                                            alt="icon"
-                                        ></Image>
-                                    </div>
-                                    <div className="relative flex w-fit h-full items-center gap-2">
-                                        <Image
-                                            src="/lc-top-100-liked-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Top 100 Liked");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-75-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("LeetCode 75");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-top-100-interview-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Top Interview 150");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-programming-skills-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Programming Skills");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-premium-100-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Premium Algo 100");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-dp-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Dynamic Programming");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-graph-theory-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Graph Theory");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-binary-search-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Binary Search");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-50-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("50 Days - 2023");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-100-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("100 Days - 2023");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-may-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("May 2023 Badge");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-june-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("June 2023 Badge");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-august-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Aug 2023 Badge");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                        <Image
-                                            src="/lc-september-badge.png"
-                                            height={45}
-                                            width={45}
-                                            onMouseEnter={() => {
-                                                setInfo("Sep 2023 Badge");
-                                            }}
-                                            onMouseLeave={() => {
-                                                setInfo("");
-                                            }}
-                                            alt="icon"
-                                        ></Image>
-                                    </div>
+                                    {[0, 1].map((groupIndex) => (
+                                        <div
+                                            key={groupIndex}
+                                            className="relative flex h-full shrink-0 items-center gap-2"
+                                            aria-hidden={groupIndex === 0}
+                                        >
+                                            {LEETCODE_BADGES.map((badge) => (
+                                                <Image
+                                                    key={`${groupIndex}-${badge.src}`}
+                                                    src={badge.src}
+                                                    height={45}
+                                                    width={45}
+                                                    onMouseEnter={() => {
+                                                        setInfo(badge.title);
+                                                    }}
+                                                    onMouseLeave={() => {
+                                                        setInfo("");
+                                                    }}
+                                                    alt={badge.title}
+                                                ></Image>
+                                            ))}
+                                        </div>
+                                    ))}
                                 </motion.div>
+                            </div>
+                            <div
+                                className="pointer-events-none flex h-[50px] items-center gap-2 opacity-0"
+                                aria-hidden="true"
+                            >
+                                {LEETCODE_BADGES.map((badge) => (
+                                    <Image
+                                        key={`spacer-${badge.src}`}
+                                        src={badge.src}
+                                        height={45}
+                                        width={45}
+                                        alt=""
+                                    ></Image>
+                                ))}
                             </div>
                         </div>
                     </div>
